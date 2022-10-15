@@ -16,6 +16,7 @@ app.post('/auth/login', (req, res) => {
 console.log(req.body);
 
 // сгенерируем токен, encryptionKey - некий ключ шифрования, тут просто строка ))
+// jwt.io на сайте можно расшифровать
   const token = jwt.sign({
     email: req.body.email,
     fullName: "Vasya Pupkin",
