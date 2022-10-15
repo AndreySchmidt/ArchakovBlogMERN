@@ -1,9 +1,19 @@
 //https://www.youtube.com/watch?v=GQ_pTmcXNrQ
-import express from "express";
+import express from "express";// чтобы это работало, нужно в package.json указать "type": "module"
 
 const app = express();
+
+// чтобы читать в запросах json в req.body
+app.use(express.json());
+
 app.get('/', (req, res) => {
-  res.send('HW');
+  res.send('Here I am');
+});
+
+app.post('/auth/login', (req, res) => {
+  res.json({
+    success: true,
+  });
 });
 
 // port 4444
