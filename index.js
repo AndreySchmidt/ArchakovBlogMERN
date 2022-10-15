@@ -1,5 +1,6 @@
 //https://www.youtube.com/watch?v=GQ_pTmcXNrQ
 import express from "express";// чтобы это работало, нужно в package.json указать "type": "module"
+import jwt from "jsonwebtoken";
 
 const app = express();
 
@@ -11,8 +12,18 @@ app.get('/', (req, res) => {
 });
 
 app.post('/auth/login', (req, res) => {
+
+console.log(req.body);
+
+// сгенерируем токен, encryptionKey - некий ключ шифрования, тут просто строка ))
+  const token = jwt.sign({
+    email: req.body.email,
+    fullName: "Vasya Pupkin",
+  }, 'encryptionKey');
+
   res.json({
     success: true,
+    token,
   });
 });
 
