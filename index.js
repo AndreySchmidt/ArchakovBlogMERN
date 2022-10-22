@@ -1,4 +1,5 @@
 //https://www.youtube.com/watch?v=GQ_pTmcXNrQ
+//MongoDB, Express, React, NodeJS
 import express from "express";// чтобы это работало, нужно в package.json указать "type": "module"
 import jwt from "jsonwebtoken";
 
