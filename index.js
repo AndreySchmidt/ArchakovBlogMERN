@@ -12,6 +12,25 @@ app.get('/', (req, res) => {
   res.send('Here I am');
 });
 
+
+/** пример запроса
+let user = {
+  name: 'John',
+  surname: 'Smith'
+};
+
+let response = await fetch('/auth/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json;charset=utf-8'
+  },
+  body: JSON.stringify(user)
+});
+
+let result = await response.json();
+console.log(result.token);
+*/
+
 app.post('/auth/login', (req, res) => {
 
 console.log(req.body);
